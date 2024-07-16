@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "veluqac-3a3e8"
-  }
+    "default": "veluqac3",
+    "veluqac3": "veluqac3"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

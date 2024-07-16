@@ -22,13 +22,13 @@ import {
 
 // Configuration Firebase de l'application web
 const firebaseConfig = {
-  apiKey: "AIzaSyBXp6ZAqezf4GjwET7QS3qhX9xn9Yi4W3U",
-  authDomain: "veluqac-3a3e8.firebaseapp.com",
-  projectId: "veluqac-3a3e8",
-  storageBucket: "veluqac-3a3e8.appspot.com",
-  messagingSenderId: "853579110294",
-  appId: "1:853579110294:web:65e22ffa525012dafb2fb7",
-  measurementId: "G-SDXX1H5JC6"
+    apiKey: "AIzaSyC4TPchLaw2mpjpC2RG8SWOHrrUgTCg0dM",
+    authDomain: "veluqac3.firebaseapp.com",
+    projectId: "veluqac3",
+    storageBucket: "veluqac3.appspot.com",
+    messagingSenderId: "475407741894",
+    appId: "1:475407741894:web:907dea7ba7906ba593b8c7",
+    measurementId: "G-EE5B1TKDHT"
 };
 
 // Initialiser Firebase
