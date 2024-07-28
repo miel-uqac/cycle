@@ -21,13 +21,15 @@
                 <a href="./ma_collection.html">Ma Collection</a>
                 <a href="./la_boutique.html">La Boutique</a>
                 <a href="./activites.html">Activités</a>
-                <a href="./index.html">Connexion</a>
+                <a href="./mon_compte.html">Mon Compte</a>
             </nav>
         </header>
         <main>
             <h1>Bienvenue sur notre site !</h1>
             <div>
                 <h3>Inscription</h3>
+                <p id="message">Le mot de passe doit contenir au moins 8 caractères, une minuscule, une majuscule, un chiffre et un caractère spécial</p>                    
+
                 <form class="signup">
                     <label for="email">Email :</label>
                     <input type="email" name="email" autocomplete="email" required/>
@@ -37,45 +39,20 @@
                     <br>
                     <label for="codeBarre">Code Barre :</label>
                     <input type="text" name="codeBarre" autocomplete="codeBarre" required/>
-                    <button>Inscription</button>
-                </form>
-                <p id="message">Le mot de passe doit contenir au moins 8 caractères, une minuscule, une majuscule, un chiffre et un caractère spécial</p>                    
-                <p id="error-message" style="color:red;"></p>
-            </div>
-
-            <div>
-                <h3>Connexion</h3>
-                <form class="login">
-                    <label for="email">Email :</label>
-                    <input type="email" name="email" autocomplete="username"/>
                     <br>
-                    <label for="password">Password :</label>
-                    <input type="password" name="password" autocomplete="new-password"/>
-                    <button>Connexion</button>
-            </div>
-            <div>
-              <h3>Mot de passe oublié</h3>
-              <input type="email" id="resetEmail" placeholder="Entrez votre email" />
-              <button id="resetPasswordBtn">Réinitialiser le mot de passe</button>
-              <p id="resetPasswordMessage"></p>
-            </div>
-            
-            <div class="userCredentials">
-              <h3>Email: </h3>
-              <h5 id="displayEmail">none</h5>
-              <h3>Verification:</h3>
-              <h5 id="status">none</h5>
-            </div>
-            
-            <div>
-                <h3>Authentification sans password</h3>
-                <form class="passwordless">
-                    <span id="email-label">Email :</span>
-                    <input type="email" name="email" autocomplete="username"/>
-                    <button>Connectez-vous</button>
-                </form>
-            </div>
+                    <button>Inscription</button>
+                    <button id="connexion">connexion</button>
 
+                </form>
+                <p id="error-message" style="color:red;"></p>
+            
+                <script>
+                    document.getElementById('connexion').addEventListener('click', function() {
+                        window.location.href = 'connexion.html';
+                    });
+                </script>
+            </div>
+            
             <div>
                 <button class="logout">Déconnexion</button>
                 <button id="deleteAccountButton">Supprimer le compte</button>

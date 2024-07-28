@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page de Connexion</title>
+        <script defer src="./bundle.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
+        
+        <link rel="stylesheet" href="./css/connexion.css">
+        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="./accueil.html">Accueil</a>
+                <a href="./mon_energie.html">Mon Energie</a>
+                <a href="./ma_collection.html">Ma Collection</a>
+                <a href="./la_boutique.html">La Boutique</a>
+                <a href="./activites.html">Activités</a>
+                <a href="./mon_compte.html">Mon Compte</a>
+            </nav>
+        </header>
+        <main>
+            <h1>Bienvenue sur notre site !</h1>
+            <div>
+                <h3>Connexion</h3>
+                <form class="login">
+                    <label for="email">Email :</label>
+                    <input type="email" name="email" autocomplete="username"/>
+                    <br>
+                    <label for="password">Password :</label>
+                    <input type="password" name="password" autocomplete="new-password"/>
+                    <br>
+                    <button>Connexion</button>
+                    <button id="Inscription">Inscription</button>
+                    <script>
+                        document.getElementById('Inscription').addEventListener('click', function() {
+                            window.location.href = 'index.html';
+                        });
+                    </script>
+                </form>
+                    
+            </div>
+            <div>
+              <h3>Mot de passe oublié</h3>
+              <input type="email" id="resetEmail" placeholder="Entrez votre email" />
+              <button id="resetPasswordBtn">Réinitialiser le mot de passe</button>
+              <p id="resetPasswordMessage"></p>
+            </div>
+            
+            <div>
+                <button class="logout">Déconnexion</button>
+                <button id="deleteAccountButton">Supprimer le compte</button>
+            </div>
+        </main>
+    </body>
+    <footer>
+        <p>Projet VELUQAC </p>
+    </footer>
+</html>

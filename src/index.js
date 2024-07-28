@@ -47,10 +47,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const resetEmail = document.getElementById("resetEmail");
     const resetPasswordMessage = document.getElementById("resetPasswordMessage");
     const deleteAccountButton = document.getElementById('deleteAccountButton');
+    const newPasswordForm = document.getElementById('resetPasswordForm');
+    const fichierCSV = document.getElementById('uploadForm');
 
     let dspEmail = document.getElementById("displayEmail");
     let status = document.getElementById("status");
 
+    const profileContainer = document.getElementById('profile-container');
+    const userNameElement = document.getElementById('user-name');
+    const userEmailElement = document.getElementById('user-email');
+    
     // Fonction de validation de mot de passe
     function validatePassword(password) {
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -63,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return emailRegex.test(email);
     }
 
-    //Inscription de l'utilisateur
+    // Inscription de l'utilisateur
     if (signupForm){
         signupForm.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -141,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     
-    //Connexion de l'utilisateur
+    // Connexion de l'utilisateur
     if (loginForm){
         loginForm.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -164,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    //Deconnexion de l'utilisateur
+    // Deconnexion de l'utilisateur
     if (logoutBtn){
         logoutBtn.addEventListener("click", () => {
             signOut(auth)
@@ -174,13 +180,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Écouter les changements d'état de l'authentification
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, async (user) => {
         if (user) {
+            signupForm.style.display = 'none';
+            loginForm.style.display = 'none';
+            resetPasswordButton.style.display = 'none';
+            resetPasswordMessage.style.display = 'none';
+            logoutButton.style.display = 'block';
+            deleteAccountButton.style.display = 'block';
             console.log("Utilisateur authentifié:", user);
-            // Récupérer les données de l'utilisateur depuis Firestore
-            const userDocRef = doc(db, "utilisateurs", user.uid);
-            getDoc(userDocRef).then((docSnap) => {
-                if (docSnap.exists()) {
+
+            try {
+                // Récupérer les données de l'utilisateur depuis Firestore
+                const userDocRef = doc(db, "utilisateurs", user.uid);
+                const userDocSnap = await getDoc(userDocRef);
+
+                if (userDocSnap.exists()) {
+                    const userData = userDocSnap.data();
+
                     // Vérifiez l'existence de l'élément avant de définir textContent
                     const userEmailElement = document.getElementById('userEmail');
                     if (userEmailElement) {
@@ -189,7 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         console.error("Élément userEmail non trouvé dans le DOM.");
                     }
 
-                    // Ajoutez d'autres éléments pour afficher plus de données
                     const userNameElement = document.getElementById('userName');
                     if (userNameElement) {
                         userNameElement.textContent = userData.username;
@@ -203,13 +219,22 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else {
                         console.error("Élément userCodeBarre non trouvé dans le DOM.");
                     }
+
+                    profileContainer.style.display = 'block';
                 } else {
                     console.log("Aucune donnée d'utilisateur trouvée !");
                 }
-            }).catch((error) => {
+            } catch (error) {
                 console.log("Erreur lors de la récupération des données de l'utilisateur:", error);
-            });   
+            }
         } else {
+            signupForm.style.display = 'block';
+            loginForm.style.display = 'block';
+            resetPasswordButton.style.display = 'block';
+            resetPasswordMessage.style.display = 'block';
+            logoutButton.style.display = 'none';
+            deleteAccountButton.style.display = 'none';
+            profileContainer.style.display = 'none';
             console.log("Aucun utilisateur authentifié. Restez sur la page actuelle.");
         }
     });
@@ -230,8 +255,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h2>${appareil.nom}</h2>
                 <p>ID: ${appareil.id}</p>
                 <p>Consommation en kWh: ${appareil.consomation}</p>
-                <p>Temps d'utilisation: ${appareil.temps}</p>
-                <img src="${appareil.image}" alt="${appareil.nom}" style="width: 100px;"/>
+                <p>Temps d'utilisation: ${appareil.temps_utilisation} heures</p>
+                <img src="${appareil.imageUrl}" alt="${appareil.nom}" style="width: 100px;"/>
             `;
             appareilsContainer.appendChild(appareilDiv);
         });
@@ -240,24 +265,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Gestion de la réinitialisation du mot de passe par email
-    resetPasswordBtn.addEventListener("click", () => {
-        const email = resetEmail.value;
+    if (resetPasswordBtn && resetEmail && resetPasswordMessage) {
+        resetPasswordBtn.addEventListener("click", () => {
+            const email = resetEmail.value;
 
-        if (!validateEmail(email)) {
-            resetPasswordMessage.textContent = "Veuillez entrer une adresse email uqac.ca ou etu.uqac.ca valide";
-            return;
-        }
+            if (!validateEmail(email)) {
+                resetPasswordMessage.textContent = "Veuillez entrer une adresse email uqac.ca ou etu.uqac.ca valide";
+                return;
+            }
 
-        sendPasswordResetEmail(auth, email)
-            .then(() => {
-                resetPasswordMessage.textContent = "Email de réinitialisation envoyé avec succès.";
-            })
-            .catch((error) => {
-                console.error("Erreur lors de l'envoi de l'email de réinitialisation:", error);
-                resetPasswordMessage.textContent = error.message;
-            });
-    });
+            sendPasswordResetEmail(auth, email)
+                .then(() => {
+                    resetPasswordMessage.textContent = "Email de réinitialisation envoyé avec succès.";
+                })
+                .catch((error) => {
+                    console.error("Erreur lors de l'envoi de l'email de réinitialisation:", error);
+                    resetPasswordMessage.textContent = error.message;
+                });
+        });
+    }
 
+    // Gestion de la suppression du compte utilisateur
     if (deleteAccountButton) {
         deleteAccountButton.addEventListener('click', () => {
             // Supprimer le compte utilisateur
@@ -292,5 +320,78 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Gestion du changement de mot de passe
+    if (newPasswordForm){
+        newPasswordForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const password = newPasswordForm.newPassword.value;
+            const passwordConfirm = newPasswordForm.confirmPassword.value;
+
+            if(password !== passwordConfirm){
+                alert("Les mots de passe ne correspondent pas");
+                return;
+            }
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const oobCode = urlParams.get('oobCode');
+
+            if (!oobCode) {
+                errorMessage.textContent = "Lien de réinitialisation invalide";
+                errorMessage.style.display = 'block';
+                alert("Lien de réinitialisation invalide");
+                return;
+            }
+
+            try {
+                // Assurez-vous que l'utilisateur est connecté
+                const user = firebase.auth().currentUser;
+
+                if (!user) {
+                    alert("Vous devez être connecté pour réinitialiser le mot de passe.");
+                    return;
+                }
+
+                const email = user.email;
+                console.log("Email de l'utilisateur:", email);
+
+                 // Réinitialisez le mot de passe
+                await auth.confirmPasswordReset(oobCode, password);
+                errorMessage.textContent = ""; 
+                errorMessage.style.display = 'none'; 
+                alert("Mot de passe réinitialisé avec succès");
+            } catch (error) {
+                console.error("Erreur lors de la réinitialisation du mot de passe:", error);
+                alert("Erreur lors de la réinitialisation du mot de passe");
+                errorMessage.textContent = "Erreur lors de la réinitialisation du mot de passe";
+                errorMessage.style.display = 'block';
+            }
+        });
+    }
     
+    // Gestion de l'importation de fichiers CSV
+    if (fichierCSV){
+        async function uploadCSV(){
+            const fileInput = document.getElementById('csvFile');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert("Please select a CSV file to upload.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('csvFile', file);
+
+            const response = await fetch('/importCSV', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                alert('CSV data successfully imported to Firestore!');
+            } else {
+                alert('Failed to import CSV data to Firestore.');
+            }
+        }
+    }
 });

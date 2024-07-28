@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réinitialiser le mot de passe</title>
+    <script defer src="./bundle.js"></script>
+    <link rel="stylesheet" href="./css/reinitialisation_mot_de_passe.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./accueil.html">Accueil</a>
+            <a href="./mon_energie.html">Mon Energie</a>
+            <a href="./ma_collection.html">Ma Collection</a>
+            <a href="./la_boutique.html">La Boutique</a>
+            <a href="./activites.html">Activités</a>
+
+        </nav>
+    </header>
+    <main>
+        <div class="container" id="content">
+            <!-- Le contenu sera ajouté ici par JavaScript -->
+
+        </div>
+        <div id="error-message" style="color: red; display: none;"></div>
+
+        <script>
+            // Fonction pour obtenir les paramètres de l'URL
+            function getQueryParams() {
+                const params = {};
+                window.location.search.substring(1).split("&").forEach(pair => {
+                    const [key, value] = pair.split("=");
+                    params[key] = decodeURIComponent(value || "");
+                });
+                return params;
+            }
+    
+            // Afficher le contenu en fonction des paramètres de l'URL
+            function displayContent() {
+                const params = getQueryParams();
+                const contentDiv = document.getElementById("content");
+    
+                if (params.mode === "verifyEmail") {
+                    contentDiv.innerHTML = `
+                        <p>Votre email a été vérifié</p>
+                        <button id="retourPageAccueil">Aller à la Page d'accueil</button>
+                    `;
+                } else if (params.mode === "resetPassword") {
+                    contentDiv.innerHTML = `
+                        <h1>Réinitialiser le mot de passe</h1>
+                        <div>
+                            <form id="resetPasswordForm">
+                                <label for="newPassword">Nouveau mot de passe :</label>
+                                <input type="password" id="newPassword" name="newPassword" required>
+                                <br>
+                                <br>
+                                <label for="confirmPassword">Confirmer le nouveau mot de passe :</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                <br>
+                                <br>
+                                <button type="submit">Réinitialiser le mot de passe</button>
+                            </form>
+                        </div>
+                    `;
+                } else {
+                    contentDiv.innerHTML = `
+                        <h1>Page Personnalisée</h1>
+                        <p>Bienvenue sur votre page personnalisée!</p>
+                    `;
+                }
+            }
+    
+            // Initialiser la page
+            window.onload = displayContent;
+
+            // Ajouter l'événement après avoir vérifié que l'élément existe
+            window.addEventListener('load', () => {
+                const retourButton = document.getElementById('retourPageAccueil');
+                if (retourButton) {
+                    retourButton.addEventListener('click', function() {
+                        window.location.href = 'accueil.html';
+                    });
+                }
+            });
+        </script>
+    </main>
+</body>
+</html>

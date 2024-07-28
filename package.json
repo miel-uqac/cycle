@@ -14,8 +14,11 @@
   "dependencies": {
     "@google-cloud/datastore": "^9.1.0",
     "csv-parser": "^3.0.0",
+    "express": "^4.19.2",
+    "express-fileupload": "^1.5.1",
     "firebase": "^10.12.3",
-    "firebase-admin": "^12.2.0"
+    "firebase-admin": "^12.2.0",
+    "fs": "^0.0.1-security"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",

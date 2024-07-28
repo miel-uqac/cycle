@@ -3,7 +3,15 @@
     "default": "veluqac3",
     "veluqac3": "veluqac3"
   },
-  "targets": {},
+  "targets": {
+    "veluqac3": {
+      "hosting": {
+        "veluqac3": [
+          "veluqac3"
+        ]
+      }
+    }
+  },
   "etags": {},
   "dataconnectEmulatorConfig": {}
 }
