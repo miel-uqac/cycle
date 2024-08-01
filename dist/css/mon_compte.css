@@ -1,54 +1,60 @@
+/* Styles pour le corps de la page */
 body {
-    background-color: #6FB776;
-    font-family: Arial, sans-serif;
+    background-color: #6FB776; /* Couleur de fond de la page */
+    font-family: Arial, sans-serif; /* Police d'écriture de la page */
 }
 
+/* Styles pour l'en-tête de la page */
 header {
-    width: 100%;
-    background-color: #15771F;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 1000; 
+    width: 100%; /* Largeur de 100% pour prendre toute la largeur de la page */
+    background-color: #15771F; /* Couleur de fond de l'en-tête */
+    color: #fff; /* Couleur du texte de l'en-tête */
+    padding: 10px 0; /* Espacement en haut et en bas de l'en-tête */
+    position: fixed; /* Position fixe pour que l'en-tête reste en haut de la page */
+    top: 0; /* Placement en haut de la page */
+    left: 0; /* Placement à gauche de la page */
+    z-index: 1000; /* Assure que l'en-tête reste au-dessus des autres éléments */
 }
 
+/* Styles pour les liens de navigation dans l'en-tête */
 header nav a {
-    margin-left: 10px;
-    color: azure;
+    margin-left: 10px; /* Espacement à gauche de chaque lien */
+    color: azure; /* Couleur des liens */
 }
 
+/* Styles pour le contenu principal de la page */
 main {
-    padding-top: 60px; 
-    padding-bottom: 40px; 
+    padding-top: 60px; /* Espacement en haut pour éviter de chevaucher l'en-tête */
+    padding-bottom: 40px; /* Espacement en bas */
 }
 
+/* Styles pour les titres h1 */
 h1 {
-    margin: 10px;
-    text-align: center;
+    margin: 10px; /* Marge autour du titre */
+    text-align: center; /* Centrage du texte */
 }
 
-button{
-    margin: 10px;
-    background-color: #6FB776;
+/* Styles pour les boutons */
+button {
+    margin: 10px; /* Marge autour des boutons */
+    background-color: #6FB776; /* Couleur de fond des boutons */
 }
 
-
-
-div{
-    background-color: #6FB776;
-    border: 1px solid black;
-    margin: 10px;
-    padding: 10px;
+/* Styles pour les div */
+div {
+    background-color: #6FB776; /* Couleur de fond des div */
+    border: 1px solid black; /* Bordure noire des div */
+    margin: 10px; /* Marge autour des div */
+    padding: 10px; /* Espacement interne des div */
 }
 
+/* Styles pour le pied de page */
 footer {
-    width: 100%;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed; 
-    bottom: 0;
-    left: 0;
-    text-align: center;
+    width: 100%; /* Largeur de 100% pour prendre toute la largeur de la page */
+    color: #fff; /* Couleur du texte du pied de page */
+    padding: 10px 0; /* Espacement en haut et en bas du pied de page */
+    position: fixed; /* Position fixe pour que le pied de page reste en bas de la page */
+    bottom: 0; /* Placement en bas de la page */
+    left: 0; /* Placement à gauche de la page */
+    text-align: center; /* Centrage du texte */
 }

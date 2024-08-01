@@ -1,84 +1,99 @@
+/* Styles pour le corps de la page */
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #6FB776;
-    font-family: Arial, sans-serif;
+    display: flex; /* Utilise le modèle Flexbox pour disposer les enfants */
+    align-items: center; /* Aligne les éléments enfants au centre verticalement */
+    justify-content: center; /* Aligne les éléments enfants au centre horizontalement */
+    height: 100vh; /* Hauteur de 100% de la hauteur de la fenêtre */
+    background-color: #6FB776; /* Couleur de fond */
+    font-family: Arial, sans-serif; /* Police d'écriture */
 }
 
+/* Styles pour l'en-tête de la page */
 header {
-    width: 100%;
-    background-color: #15771F;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 1000; 
+    width: 100%; /* Largeur de 100% pour prendre toute la largeur */
+    background-color: #15771F; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 0; /* Espacement en haut et en bas */
+    position: fixed; /* Position fixe en haut */
+    top: 0; /* Placement en haut de la page */
+    left: 0; /* Placement à gauche */
+    z-index: 1000; /* Assure que l'en-tête reste au-dessus des autres éléments */
 }
 
+/* Styles pour les liens dans la navigation de l'en-tête */
 header nav a {
-    margin-left: 10px;
+    margin-left: 10px; /* Espacement à gauche de chaque lien */
 }
 
+/* Styles pour le contenu principal */
 main {
-    padding-top: 60px;
-    padding-bottom: 40px; 
+    padding-top: 60px; /* Espacement en haut pour éviter l'en-tête fixe */
+    padding-bottom: 40px; /* Espacement en bas pour éviter le pied de page fixe */
 }
 
+/* Styles généraux pour les div */
 div {
-    border: 1px solid black;
-    margin: 10px;
-    background-color: #15771F;
+    border: 1px solid black; /* Bordure noire */
+    margin: 10px; /* Marge autour du div */
+    background-color: #15771F; /* Couleur de fond */
 }
 
-a{
-    color: azure;
+/* Styles pour les liens */
+a {
+    color: azure; /* Couleur des liens */
 }
 
+/* Styles pour les titres h1 */
 h1 {
-    margin: 10px;
-    text-align: center;
+    margin: 10px; /* Marge autour du titre */
+    text-align: center; /* Centrage du texte */
 }
 
+/* Styles pour les titres h3 */
 h3 {
-    margin: 10px;
+    margin: 10px; /* Marge autour du titre */
 }
 
-p{
-    margin-left: 10px;
+/* Styles pour les paragraphes */
+p {
+    margin-left: 10px; /* Espacement à gauche des paragraphes */
 }
 
-button{
-    margin: 10px;
-    background-color: #6FB776;
+/* Styles pour les boutons */
+button {
+    margin: 10px; /* Marge autour des boutons */
+    background-color: #6FB776; /* Couleur de fond */
 }
 
-button:hover{
-    background-color: #b3e8b8;
+/* Styles pour les boutons au survol */
+button:hover {
+    background-color: #b3e8b8; /* Couleur de fond au survol */
 }
 
-label{
-    margin-left: 10px;
-    margin-top: 10px;
+/* Styles pour les étiquettes */
+label {
+    margin-left: 10px; /* Espacement à gauche des étiquettes */
+    margin-top: 10px; /* Espacement en haut des étiquettes */
 }
 
-input{
-    margin-left: 10px;
-    margin-top: 10px;
+/* Styles pour les champs de saisie */
+input {
+    margin-left: 10px; /* Espacement à gauche des champs de saisie */
+    margin-top: 10px; /* Espacement en haut des champs de saisie */
 }
 
-span{
-    margin-left: 10px;
+/* Styles pour les spans */
+span {
+    margin-left: 10px; /* Espacement à gauche des spans */
 }
 
+/* Styles pour le pied de page */
 footer {
-    width: 100%;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    text-align: center;
+    width: 100%; /* Largeur de 100% pour prendre toute la largeur */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 0; /* Espacement en haut et en bas */
+    position: fixed; /* Position fixe en bas */
+    bottom: 0; /* Placement en bas de la page */
+    left: 0; /* Placement à gauche */
+    text-align: center; /* Centrage du texte */
 }

@@ -1,67 +1,76 @@
+/* Styles pour le corps de la page */
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #6FB776;
-    font-family: Arial, sans-serif;
+    display: flex; /* Utilise le modèle Flexbox pour disposer les enfants */
+    align-items: center; /* Aligne les éléments enfants au centre verticalement */
+    justify-content: center; /* Aligne les éléments enfants au centre horizontalement */
+    height: 100vh; /* Hauteur de 100% de la hauteur de la fenêtre */
+    background-color: #6FB776; /* Couleur de fond */
+    font-family: Arial, sans-serif; /* Police d'écriture */
 }
 
+/* Styles pour l'en-tête de la page */
 header {
-    width: 100%;
-    background-color: #15771F;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000; 
+    width: 100%; /* Largeur de 100% pour prendre toute la largeur */
+    background-color: #15771F; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 0; /* Espacement en haut et en bas */
+    position: fixed; /* Position fixe en haut */
+    top: 0; /* Placement en haut de la page */
+    left: 0; /* Placement à gauche */
+    z-index: 1000; /* Assure que l'en-tête reste au-dessus des autres éléments */
 }
 
+/* Styles pour les liens dans la navigation de l'en-tête */
 header nav a {
-    margin-left: 10px;
+    margin-left: 10px; /* Espacement à gauche de chaque lien */
 }
 
-a{
-    color: azure;
+/* Styles pour les liens */
+a {
+    color: azure; /* Couleur des liens */
 }
 
+/* Styles pour les titres h1 */
 h1 {
-    margin: 10px;
-    text-align: center;
+    margin: 10px; /* Marge autour du titre */
+    text-align: center; /* Centrage du texte */
 }
 
-p{
-    margin-left: 10px;
-    margin-top: 30px;
+/* Styles pour les paragraphes */
+p {
+    margin-left: 10px; /* Espacement à gauche des paragraphes */
+    margin-top: 30px; /* Espacement en haut des paragraphes */
 }
 
-span{
-    margin-left: 10px;
+/* Styles pour les spans */
+span {
+    margin-left: 10px; /* Espacement à gauche des spans */
 }
 
-button{
-    margin-left: 10px;
-    margin-top: 15px;
-    background-color: #15771F;
+/* Styles pour les boutons */
+button {
+    margin-left: 10px; /* Espacement à gauche des boutons */
+    margin-top: 15px; /* Espacement en haut des boutons */
+    background-color: #15771F; /* Couleur de fond des boutons */
 }
 
+/* Styles pour la colonne latérale gauche */
 .col1 {
-    position: fixed;
-    top: 38px;
-    left: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: azure;
-    
+    position: fixed; /* Position fixe */
+    top: 38px; /* Placement en dessous de l'en-tête */
+    left: 0; /* Placement à gauche */
+    width: 200px; /* Largeur de la colonne */
+    height: 100vh; /* Hauteur de 100% de la hauteur de la fenêtre */
+    background-color: azure; /* Couleur de fond */
 }
 
+/* Styles pour le pied de page */
 footer {
-    width: 100%;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed; 
-    bottom: 0;
-    left: 0;
-    text-align: center;
+    width: 100%; /* Largeur de 100% pour prendre toute la largeur */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 0; /* Espacement en haut et en bas */
+    position: fixed; /* Position fixe en bas */
+    bottom: 0; /* Placement en bas de la page */
+    left: 0; /* Placement à gauche */
+    text-align: center; /* Centrage du texte */
 }

@@ -32,13 +32,14 @@ const firebaseConfig = {
 };
 
 // Initialiser Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
+const app = initializeApp(firebaseConfig); // Initialisation de l'application Firebase
+const db = getFirestore(app); // Initialisation de Firestore
+const auth = getAuth(app); // Initialisation de l'authentification Firebase
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM chargé");
 
+    // Sélection des éléments du DOM
     const signupForm = document.querySelector(".signup");
     const loginForm = document.querySelector(".login");
     const logoutBtn = document.querySelector(".logout");
@@ -137,12 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(() => {
                 console.log("Données de l'utilisateur sauvegardées avec succès");
-                signupForm.reset();
-                errorMessage.textContent = "";
+                signupForm.reset(); // Réinitialiser le formulaire après une inscription réussie
+                errorMessage.textContent = ""; // Effacer les messages d'erreur
             })
             .catch((error) => {
                 console.log(error.message);
-                errorMessage.textContent = error.message;
+                errorMessage.textContent = error.message; // Afficher les erreurs éventuelles
             });
         });
     }
@@ -150,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Connexion de l'utilisateur
     if (loginForm){
         loginForm.addEventListener("submit", (e) => {
-            e.preventDefault();
+            e.preventDefault(); // Empêche l'envoi du formulaire
     
             const email = loginForm.email.value;
             const password = loginForm.password.value;
@@ -159,13 +160,13 @@ document.addEventListener("DOMContentLoaded", () => {
             .then((userCredential) => {
                 console.log("Utilisateur connecté avec succès", userCredential.user);
                 const user = userCredential.user;
-                dspEmail.textContent = user.email;
-                status.textContent = user.emailVerified;
-                loginForm.reset();
+                dspEmail.textContent = user.email; // Afficher l'email de l'utilisateur connecté
+                status.textContent = user.emailVerified ? 'Verified' : 'Not Verified'; // Afficher le statut de vérification de l'email
+                loginForm.reset(); // Réinitialiser le formulaire après une connexion réussie
             })
             .catch((error) => {
                 console.error("Erreur de connexion:", error.message);
-                errorMessage.textContent = error.message;
+                errorMessage.textContent = error.message; // Afficher les erreurs éventuelles
             });
         });
     }
@@ -175,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
         logoutBtn.addEventListener("click", () => {
             signOut(auth)
             .then(() => console.log("utilisateur deconnecté"))
-            .catch((err) => console.log(err.message));
+            .catch((err) => console.log(err.message)); // Afficher les erreurs éventuelles lors de la déconnexion
         });
     }
 
@@ -280,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 .catch((error) => {
                     console.error("Erreur lors de l'envoi de l'email de réinitialisation:", error);
-                    resetPasswordMessage.textContent = error.message;
+                    resetPasswordMessage.textContent = error.message; // Afficher les erreurs éventuelles
                 });
         });
     }
@@ -344,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             try {
-                // Assurez-vous que l'utilisateur est connecté
+                // s'assurer que l'utilisateur est connecté
                 const user = firebase.auth().currentUser;
 
                 if (!user) {
@@ -355,7 +356,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const email = user.email;
                 console.log("Email de l'utilisateur:", email);
 
-                 // Réinitialisez le mot de passe
+                // Réinitialisez le mot de passe
                 await auth.confirmPasswordReset(oobCode, password);
                 errorMessage.textContent = ""; 
                 errorMessage.style.display = 'none'; 

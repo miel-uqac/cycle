@@ -1,70 +1,75 @@
 <!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page d'accueil</title>
-        <script defer src="./bundle.js"></script>
-        <link rel="stylesheet" href="./css/mon_energie.css">
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+<html lang="fr"> 
+<head>
+    <meta charset="UTF-8"> <!-- Déclaration du jeu de caractères UTF-8 pour le document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuration pour un affichage adapté aux appareils mobiles -->
+    <title>Page d'accueil</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <script defer src="./bundle.js"></script> <!-- Inclusion du fichier JavaScript principal avec exécution différée jusqu'au chargement complet du HTML -->
+    <link rel="stylesheet" href="./css/mon_energie.css"> <!-- Lien vers le fichier CSS spécifique à la page "Mon Energie" -->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"> <!-- Définition de l'icône de la page affichée dans l'onglet du navigateur -->
+</head>
+<body>
+    <header>
+        <!-- En-tête fixe contenant la navigation -->
+        <nav>
+            <!-- Liens de navigation vers différentes pages du site -->
+            <a href="./accueil.html">Accueil</a>
+            <a href="./mon_energie.html">Mon Energie</a>
+            <a href="./ma_collection.html">Ma Collection</a>
+            <a href="./la_boutique.html">La Boutique</a>
+            <a href="./activites.html">Activités</a>
+            <a href="./index.html">Inscription</a>
+            <a href="./connexion.html">Connexion</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Zone principale du contenu de la page -->
+        <h1>VELUQAC</h1> <!-- Titre principal de la page -->
 
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="./accueil.html">Accueil</a>
-                <a href="./mon_energie.html">Mon Energie</a>
-                <a href="./ma_collection.html">Ma Collection</a>
-                <a href="./la_boutique.html">La Boutique</a>
-                <a href="./activites.html">Activités</a>
-                <a href="./index.html">Inscription</a>
-                <a href="./connexion.html">Connexion</a>
-
-            </nav>
-        </header>
-        <main>
-            <h1> VELUQAC</h1>
-
-            <div class="col">
-                <div class="ligne1">
-                    <p>quantité d’énergie créé durant le jour :</p>
-                    <span id="quantite_energie_cours">---</span>
-                    <br>
-                    <p>cela représente l'utilisation de :</p>
-                    <span id="representation_energie_cours">---</span>
-                </div>
-                
-                <div class="ligne2">
-                   <p>quantité d’énergie créé durant la semaine :</p>
-                   <span id="quantite_energie_cours">---</span>
-                   <br>
-                   <p>cela représente l'utilisation de :</p>
-                   <span id="representation_energie_cours">---</span>
-                </div>
-
-                <div class="ligne3">
-                    <p>quantité d’énergie créé durant le mois :</p>
-                    <span id="quantite_energie_cours">---</span>
-                    <br>
-                    <p>cela représente l'utilisation de :</p>
-                    <span id="representation_energie_cours">---</span>
-                    
-                </div>
-
-                <div class="ligne4">
-                    <p>quantité d’énergie créé depuis le début :</p>
-                    <span id="quantite_energie_cours">---</span>
-                    <br>
-                    <p>cela représente l'utilisation de :</p>
-                    <span id="representation_energie_cours">---</span>
-                    
-                </div>
-            
+        <div class="col">
+            <!-- Conteneur principal pour les données d'énergie -->
+            <div class="ligne1">
+                <!-- Première section de données -->
+                <p>quantité d’énergie créé durant le jour :</p>
+                <span id="quantite_energie_cours">---</span> <!-- Affichage de la quantité d'énergie créée durant la journée -->
+                <br>
+                <p>cela représente l'utilisation de :</p>
+                <span id="representation_energie_cours">---</span> <!-- Affichage de ce que représente cette quantité d'énergie -->
             </div>
-        </main>
+            
+            <div class="ligne2">
+                <!-- Deuxième section de données -->
+                <p>quantité d’énergie créé durant la semaine :</p>
+                <span id="quantite_energie_cours">---</span> <!-- Affichage de la quantité d'énergie créée durant la semaine -->
+                <br>
+                <p>cela représente l'utilisation de :</p>
+                <span id="representation_energie_cours">---</span> <!-- Affichage de ce que représente cette quantité d'énergie -->
+            </div>
 
-    </body>
-    <footer>
-        <p>Projet VELUQAC </p>
-    </footer>
+            <div class="ligne3">
+                <!-- Troisième section de données -->
+                <p>quantité d’énergie créé durant le mois :</p>
+                <span id="quantite_energie_cours">---</span> <!-- Affichage de la quantité d'énergie créée durant le mois -->
+                <br>
+                <p>cela représente l'utilisation de :</p>
+                <span id="representation_energie_cours">---</span> <!-- Affichage de ce que représente cette quantité d'énergie -->
+            </div>
+
+            <div class="ligne4">
+                <!-- Quatrième section de données -->
+                <p>quantité d’énergie créé depuis le début :</p>
+                <span id="quantite_energie_cours">---</span> <!-- Affichage de la quantité d'énergie créée depuis le début -->
+                <br>
+                <p>cela représente l'utilisation de :</p>
+                <span id="representation_energie_cours">---</span> <!-- Affichage de ce que représente cette quantité d'énergie -->
+            </div>
+        
+        </div>
+    </main>
+
+</body>
+<footer>
+    <!-- Pied de page fixe -->
+    <p>Projet VELUQAC </p> <!-- Mention du projet -->
+</footer>
 </html>

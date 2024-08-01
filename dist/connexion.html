@@ -1,64 +1,67 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page de Connexion</title>
-        <script defer src="./bundle.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
-        
-        <link rel="stylesheet" href="./css/connexion.css">
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
-
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="./accueil.html">Accueil</a>
-                <a href="./mon_energie.html">Mon Energie</a>
-                <a href="./ma_collection.html">Ma Collection</a>
-                <a href="./la_boutique.html">La Boutique</a>
-                <a href="./activites.html">Activités</a>
-                <a href="./mon_compte.html">Mon Compte</a>
-            </nav>
-        </header>
-        <main>
-            <h1>Bienvenue sur notre site !</h1>
-            <div>
-                <h3>Connexion</h3>
-                <form class="login">
-                    <label for="email">Email :</label>
-                    <input type="email" name="email" autocomplete="username"/>
-                    <br>
-                    <label for="password">Password :</label>
-                    <input type="password" name="password" autocomplete="new-password"/>
-                    <br>
-                    <button>Connexion</button>
-                    <button id="Inscription">Inscription</button>
-                    <script>
-                        document.getElementById('Inscription').addEventListener('click', function() {
-                            window.location.href = 'index.html';
-                        });
-                    </script>
-                </form>
-                    
-            </div>
-            <div>
-              <h3>Mot de passe oublié</h3>
-              <input type="email" id="resetEmail" placeholder="Entrez votre email" />
-              <button id="resetPasswordBtn">Réinitialiser le mot de passe</button>
-              <p id="resetPasswordMessage"></p>
-            </div>
-            
-            <div>
-                <button class="logout">Déconnexion</button>
-                <button id="deleteAccountButton">Supprimer le compte</button>
-            </div>
-        </main>
-    </body>
+<html lang="fr"> 
+<head>
+    <meta charset="UTF-8"> <!-- Déclaration du jeu de caractères UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuration pour un affichage adapté aux appareils mobiles -->
+    <title>Page de Connexion</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <script defer src="./bundle.js"></script> <!-- Inclusion du fichier JavaScript principal, avec exécution différée jusqu'au chargement complet du HTML -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script> <!-- Inclusion du SDK Firebase pour l'application -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script> <!-- Inclusion du SDK Firebase Firestore pour la base de données -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script> <!-- Inclusion du SDK Firebase Auth pour l'authentification -->
+    <link rel="stylesheet" href="./css/connexion.css"> <!-- Lien vers le fichier CSS spécifique à cette page -->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"> <!-- Définition de l'icône de la page qui apparaît dans l'onglet du navigateur -->
+</head>
+<body>
+    <header>
+        <!-- En-tête fixe contenant la navigation -->
+        <nav>
+            <!-- Liens de navigation -->
+            <a href="./accueil.html">Accueil</a>
+            <a href="./mon_energie.html">Mon Energie</a>
+            <a href="./ma_collection.html">Ma Collection</a>
+            <a href="./la_boutique.html">La Boutique</a>
+            <a href="./activites.html">Activités</a>
+            <a href="./mon_compte.html">Mon Compte</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Zone principale du contenu de la page -->
+        <h1>Bienvenue sur notre site !</h1> <!-- Titre principal de la page -->
+        <div>
+            <h3>Connexion</h3> <!-- Sous-titre pour la section de connexion -->
+            <form class="login">
+                <!-- Formulaire de connexion -->
+                <label for="email">Email :</label>
+                <input type="email" name="email" autocomplete="username"/> <!-- Champ pour l'email avec auto-complétion pour le nom d'utilisateur -->
+                <br>
+                <label for="password">Password :</label>
+                <input type="password" name="password" autocomplete="new-password"/> <!-- Champ pour le mot de passe avec auto-complétion pour le nouveau mot de passe -->
+                <br>
+                <button type="submit">Connexion</button> <!-- Bouton de connexion -->
+                <button id="Inscription" type="button">Inscription</button> <!-- Bouton d'inscription qui redirige vers la page d'inscription -->
+                <script>
+                    // Script pour rediriger vers la page d'inscription lorsque le bouton est cliqué
+                    document.getElementById('Inscription').addEventListener('click', function() {
+                        window.location.href = 'index.html';
+                    });
+                </script>
+            </form>
+        </div>
+        <div>
+            <h3>Mot de passe oublié</h3> <!-- Sous-titre pour la section de réinitialisation du mot de passe -->
+            <input type="email" id="resetEmail" placeholder="Entrez votre email" /> <!-- Champ pour entrer l'email pour réinitialiser le mot de passe -->
+            <button id="resetPasswordBtn">Réinitialiser le mot de passe</button> <!-- Bouton pour réinitialiser le mot de passe -->
+            <p id="resetPasswordMessage"></p> <!-- Message pour afficher le statut de la réinitialisation du mot de passe -->
+        </div>
+        <div>
+            <!-- Boutons pour déconnexion et suppression de compte -->
+            <button class="logout">Déconnexion</button> <!-- Bouton de déconnexion -->
+            <button id="deleteAccountButton">Supprimer le compte</button> <!-- Bouton pour supprimer le compte -->
+        </div>
+    </main>
     <footer>
-        <p>Projet VELUQAC </p>
+        <!-- Pied de page fixe -->
+        <p>Projet VELUQAC </p> <!-- Mention du projet -->
     </footer>
+</body>
 </html>

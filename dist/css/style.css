@@ -1,83 +1,98 @@
+/* Styles pour le corps de la page */
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #6FB776;
-    font-family: Arial, sans-serif;
+    display: flex; /* Utilisation du modèle de boîte flexible pour centrer le contenu */
+    align-items: center; /* Alignement vertical centré */
+    justify-content: center; /* Alignement horizontal centré */
+    height: 100vh; /* Hauteur de la fenêtre du navigateur */
+    background-color: #6FB776; /* Couleur de fond de la page */
+    font-family: Arial, sans-serif; /* Police de caractères utilisée */
 }
 
+/* Styles pour l'en-tête de la page */
 header {
-    width: 100%;
-    background-color: #15771F;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 1000; 
+    width: 100%; /* Largeur de 100% pour occuper toute la largeur de la page */
+    background-color: #15771F; /* Couleur de fond de l'en-tête */
+    color: #fff; /* Couleur du texte de l'en-tête */
+    padding: 10px 0; /* Espacement vertical dans l'en-tête */
+    position: fixed; /* Position fixe pour maintenir l'en-tête en haut de la page */
+    top: 0; /* Positionnement en haut de la page */
+    left: 0; /* Positionnement à gauche de la page */
+    z-index: 1000; /* Assure que l'en-tête est au-dessus des autres éléments */
 }
 
+/* Styles pour les liens de navigation dans l'en-tête */
 header nav a {
-    margin-left: 10px;
+    margin-left: 10px; /* Espacement à gauche de chaque lien */
 }
 
+/* Styles pour la zone principale du contenu */
 main {
-    padding-top: 60px;
-    padding-bottom: 40px; 
+    padding-top: 60px; /* Espacement supérieur pour éviter le chevauchement avec l'en-tête */
+    padding-bottom: 40px; /* Espacement inférieur pour éviter le chevauchement avec le pied de page */
 }
 
+/* Styles pour les divs */
 div {
-    border: 1px solid black;
-    margin: 10px;
-    background-color: #15771F;
+    border: 1px solid black; /* Bordure noire autour des divs */
+    margin: 10px; /* Marge autour des divs */
+    background-color: #15771F; /* Couleur de fond des divs */
 }
 
-a{
-    color: azure;
+/* Styles pour les liens */
+a {
+    color: azure; /* Couleur des liens */
 }
 
+/* Styles pour les titres h1 */
 h1 {
-    margin: 10px;
-    text-align: center;
+    margin: 10px; /* Marge autour des titres */
+    text-align: center; /* Centrage du texte */
 }
 
+/* Styles pour les titres h3 */
 h3 {
-    margin: 10px;
+    margin: 10px; /* Marge autour des titres h3 */
 }
 
-p{
-    margin-left: 10px;
+/* Styles pour les paragraphes */
+p {
+    margin-left: 10px; /* Espacement à gauche des paragraphes */
 }
 
-button{
-    margin: 10px;
-    background-color: #6FB776;
+/* Styles pour les boutons */
+button {
+    margin: 10px; /* Marge autour des boutons */
+    background-color: #6FB776; /* Couleur de fond des boutons */
 }
 
-button:hover{
-    background-color: #b3e8b8;
+/* Styles pour les boutons au survol */
+button:hover {
+    background-color: #b3e8b8; /* Changement de couleur de fond au survol */
 }
 
-label{
-    margin-left: 10px;
+/* Styles pour les labels */
+label {
+    margin-left: 10px; /* Espacement à gauche des labels */
 }
 
-input{
-    margin-left: 10px;
-    margin-top: 10px;
+/* Styles pour les champs de saisie */
+input {
+    margin-left: 10px; /* Espacement à gauche des champs de saisie */
+    margin-top: 10px; /* Espacement au-dessus des champs de saisie */
 }
 
-span{
-    margin-left: 10px;
+/* Styles pour les éléments span */
+span {
+    margin-left: 10px; /* Espacement à gauche des éléments span */
 }
 
+/* Styles pour le pied de page */
 footer {
-    width: 100%;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    text-align: center;
+    width: 100%; /* Largeur de 100% pour occuper toute la largeur de la page */
+    color: #fff; /* Couleur du texte du pied de page */
+    padding: 10px 0; /* Espacement vertical dans le pied de page */
+    position: fixed; /* Position fixe pour maintenir le pied de page en bas de la page */
+    bottom: 0; /* Positionnement en bas de la page */
+    left: 0; /* Positionnement à gauche de la page */
+    text-align: center; /* Centrage du texte dans le pied de page */
 }

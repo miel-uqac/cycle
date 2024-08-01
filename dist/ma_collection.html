@@ -1,49 +1,52 @@
 <!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ma Collection</title>
-        <script defer src="./bundle.js"></script>
-        <link rel="stylesheet" href="./css/ma_collection.css">
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+<html lang="fr"> 
+<head>
+    <meta charset="UTF-8"> <!-- Déclaration du jeu de caractères UTF-8 pour le document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuration pour un affichage adapté aux appareils mobiles -->
+    <title>Ma Collection</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <script defer src="./bundle.js"></script> <!-- Inclusion du fichier JavaScript principal avec exécution différée jusqu'au chargement complet du HTML -->
+    <link rel="stylesheet" href="./css/ma_collection.css"> <!-- Lien vers le fichier CSS spécifique à la page "Ma Collection" -->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"> <!-- Définition de l'icône de la page affichée dans l'onglet du navigateur -->
+</head>
+<body>
+    <header>
+        <!-- En-tête fixe contenant la navigation -->
+        <nav>
+            <!-- Liens de navigation vers différentes pages du site -->
+            <a href="./accueil.html">Accueil</a>
+            <a href="./mon_energie.html">Mon Energie</a>
+            <a href="./ma_collection.html">Ma Collection</a>
+            <a href="./la_boutique.html">La Boutique</a>
+            <a href="./activites.html">Activités</a>
+            <a href="./index.html">Inscription</a>
+            <a href="./connexion.html">Connexion</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Zone principale du contenu de la page -->
+        <h1>VELUQAC</h1> <!-- Titre principal de la page -->
 
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="./accueil.html">Accueil</a>
-                <a href="./mon_energie.html">Mon Energie</a>
-                <a href="./ma_collection.html">Ma Collection</a>
-                <a href="./la_boutique.html">La Boutique</a>
-                <a href="./activites.html">Activités</a>
-                <a href="./index.html">Inscription</a>
-                <a href="./connexion.html">Connexion</a>
-
-            </nav>
-        </header>
-        <main>
-            <h1> VELUQAC</h1>
-
-            <div class="col1">
-               <p> nombre de points : </p>
-               <span id="nb_points">---</span>
-               <br>
-               <p>quantité d'énergie créé :</p>
-               <span id="quantite_energie">---</span>
-               <br>
-               <button class="convertir">Convertir</button>
+        <div class="col1">
+            <!-- Première colonne affichant les points et l'énergie -->
+            <p>Nombre de points :</p>
+            <span id="nb_points">---</span> <!-- Affichage du nombre de points, initialisé avec une valeur par défaut -->
+            <br>
+            <p>Quantité d'énergie créée :</p>
+            <span id="quantite_energie">---</span> <!-- Affichage de la quantité d'énergie créée, initialisé avec une valeur par défaut -->
+            <br>
+            <button class="convertir">Convertir</button> <!-- Bouton pour convertir les points ou l'énergie, avec une classe pour le style -->
+        </div>
+        <div class="col2">
+            <!-- Deuxième colonne pour afficher la collection -->
+            <h1>Ma collection</h1> <!-- Titre de la section de la collection -->
+            <div class="img_collection">
+                <!-- Conteneur pour les images de la collection, mais actuellement vide -->
             </div>
-            <div class="col2">
-                <h1>Ma collection</h1>
-                <div classe="img_collection">
-
-                </div>
-            </div>
-        </main>
-
-    </body>
+        </div>
+    </main>
     <footer>
-        <p>Projet VELUQAC </p>
+        <!-- Pied de page fixe -->
+        <p>Projet VELUQAC </p> <!-- Mention du projet -->
     </footer>
+</body>
 </html>

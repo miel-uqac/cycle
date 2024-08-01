@@ -1,70 +1,81 @@
+/* Styles pour le corps de la page */
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #6FB776;
-    font-family: Arial, sans-serif;
+    display: flex; /* Utilisation du modèle de boîte flexible pour centrer le contenu */
+    align-items: center; /* Alignement vertical centré */
+    justify-content: center; /* Alignement horizontal centré */
+    height: 100vh; /* Hauteur de la fenêtre du navigateur */
+    background-color: #6FB776; /* Couleur de fond de la page */
+    font-family: Arial, sans-serif; /* Police d'écriture de la page */
 }
 
+/* Styles pour l'en-tête de la page */
 header {
-    width: 100%;
-    background-color: #15771F;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    width: 100%; /* Largeur de 100% pour occuper toute la largeur de la page */
+    background-color: #15771F; /* Couleur de fond de l'en-tête */
+    color: #fff; /* Couleur du texte de l'en-tête */
+    padding: 10px 0; /* Espacement vertical dans l'en-tête */
+    position: fixed; /* Position fixe pour maintenir l'en-tête en haut de la page */
+    top: 0; /* Positionnement en haut de la page */
+    left: 0; /* Positionnement à gauche de la page */
+    z-index: 1000; /* Assure que l'en-tête est au-dessus des autres éléments */
 }
 
+/* Styles pour les liens de navigation dans l'en-tête */
 header nav a {
-    margin-left: 10px;
+    margin-left: 10px; /* Espacement à gauche de chaque lien */
 }
 
+/* Styles pour les lignes dans les colonnes */
 .col .ligne,
 .col .ligne2,
 .col .ligne3,
 .col .ligne4 {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Marge inférieure pour séparer les lignes */
 }
 
+/* Styles pour les éléments dans les colonnes */
 .col p,
 .col span {
-    display: inline-block;
-    margin: 0;
+    display: inline-block; /* Affichage en ligne pour aligner les éléments côte à côte */
+    margin: 0; /* Suppression de la marge autour des éléments */
 }
 
+/* Styles pour les divs */
 div {
-    border: 1px solid black;
-    margin: 20px;
-    background-color: #15771F;
+    border: 1px solid black; /* Bordure noire autour des divs */
+    margin: 20px; /* Marge autour des divs */
+    background-color: #15771F; /* Couleur de fond des divs */
 }
 
+/* Styles pour les lignes spécifiques dans les colonnes */
 .ligne1, .ligne2, .ligne3, .ligne4 {
-    margin-left: 10px;
-    background-color: #fff;
+    margin-left: 10px; /* Marge à gauche pour aligner les lignes */
+    background-color: #fff; /* Couleur de fond blanche pour les lignes */
 }
 
-a{
-    color: azure;
+/* Styles pour les liens */
+a {
+    color: azure; /* Couleur des liens */
 }
 
+/* Styles pour les titres h1 */
 h1 {
-    margin: 10px;
-    text-align: center;
+    margin: 10px; /* Marge autour des titres */
+    text-align: center; /* Centrage du texte */
 }
 
+/* Styles pour les paragraphes */
 p {
-    margin-left: 20px;
+    margin-left: 20px; /* Marge à gauche pour les paragraphes */
 }
 
+/* Styles pour le pied de page */
 footer {
-    width: 100%;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed; 
-    bottom: 0;
-    left: 0;
-    text-align: center;
+    width: 100%; /* Largeur de 100% pour occuper toute la largeur de la page */
+    color: #fff; /* Couleur du texte du pied de page */
+    padding: 10px 0; /* Espacement vertical dans le pied de page */
+    position: fixed; /* Position fixe pour maintenir le pied de page en bas de la page */
+    bottom: 0; /* Positionnement en bas de la page */
+    left: 0; /* Positionnement à gauche de la page */
+    text-align: center; /* Centrage du texte */
 }

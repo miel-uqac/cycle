@@ -1,65 +1,69 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page d'accueil</title>
-        <script defer src="./bundle.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
-        
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+<html lang="fr"> 
+<head>
+    <meta charset="UTF-8"> <!-- Déclaration du jeu de caractères UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuration pour un affichage adapté aux appareils mobiles -->
+    <title>Page d'accueil</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <script defer src="./bundle.js"></script> <!-- Inclusion du fichier JavaScript principal avec exécution différée jusqu'au chargement complet du HTML -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script> <!-- Inclusion du SDK Firebase pour l'application -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script> <!-- Inclusion du SDK Firebase Firestore pour la base de données -->
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script> <!-- Inclusion du SDK Firebase Auth pour l'authentification -->
+    <link rel="stylesheet" href="./css/style.css"> <!-- Lien vers le fichier CSS pour le style de la page -->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"> <!-- Définition de l'icône de la page qui apparaît dans l'onglet du navigateur -->
+</head>
+<body>
+    <header>
+        <!-- En-tête fixe contenant la navigation -->
+        <nav>
+            <!-- Liens de navigation -->
+            <a href="./accueil.html">Accueil</a>
+            <a href="./mon_energie.html">Mon Energie</a>
+            <a href="./ma_collection.html">Ma Collection</a>
+            <a href="./la_boutique.html">La Boutique</a>
+            <a href="./activites.html">Activités</a>
+            <a href="./mon_compte.html">Mon Compte</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Zone principale du contenu de la page -->
+        <h1>Bienvenue sur notre site !</h1> <!-- Titre principal de la page -->
+        <div>
+            <h3>Inscription</h3> <!-- Sous-titre pour la section d'inscription -->
+            <p id="message">Le mot de passe doit contenir au moins 8 caractères, une minuscule, une majuscule, un chiffre et un caractère spécial</p> <!-- Message indiquant les exigences du mot de passe -->
 
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="./accueil.html">Accueil</a>
-                <a href="./mon_energie.html">Mon Energie</a>
-                <a href="./ma_collection.html">Ma Collection</a>
-                <a href="./la_boutique.html">La Boutique</a>
-                <a href="./activites.html">Activités</a>
-                <a href="./mon_compte.html">Mon Compte</a>
-            </nav>
-        </header>
-        <main>
-            <h1>Bienvenue sur notre site !</h1>
-            <div>
-                <h3>Inscription</h3>
-                <p id="message">Le mot de passe doit contenir au moins 8 caractères, une minuscule, une majuscule, un chiffre et un caractère spécial</p>                    
+            <form class="signup">
+                <!-- Formulaire d'inscription -->
+                <label for="email">Email :</label>
+                <input type="email" name="email" autocomplete="email" required/> <!-- Champ pour l'email avec auto-complétion pour le nom d'utilisateur -->
+                <br>
+                <label for="password">Password :</label>
+                <input type="password" name="password" autocomplete="new-password" required/> <!-- Champ pour le mot de passe avec auto-complétion pour le nouveau mot de passe -->
+                <br>
+                <label for="codeBarre">Code Barre :</label>
+                <input type="text" name="codeBarre" autocomplete="codeBarre" required/> <!-- Champ pour le code barre avec auto-complétion spécifique -->
+                <br>
+                <button type="submit">Inscription</button> <!-- Bouton pour soumettre le formulaire d'inscription -->
+                <button id="connexion" type="button">connexion</button> <!-- Bouton pour accéder à la page de connexion -->
+            </form>
+            <p id="error-message" style="color:red;"></p> <!-- Message pour afficher les erreurs d'inscription, affiché en rouge -->
 
-                <form class="signup">
-                    <label for="email">Email :</label>
-                    <input type="email" name="email" autocomplete="email" required/>
-                    <br>
-                    <label for="password">Password :</label>
-                    <input type="password" name="password" autocomplete="new-password" required/>
-                    <br>
-                    <label for="codeBarre">Code Barre :</label>
-                    <input type="text" name="codeBarre" autocomplete="codeBarre" required/>
-                    <br>
-                    <button>Inscription</button>
-                    <button id="connexion">connexion</button>
+            <script>
+                // Script pour rediriger vers la page de connexion lorsque le bouton est cliqué
+                document.getElementById('connexion').addEventListener('click', function() {
+                    window.location.href = 'connexion.html';
+                });
+            </script>
+        </div>
 
-                </form>
-                <p id="error-message" style="color:red;"></p>
-            
-                <script>
-                    document.getElementById('connexion').addEventListener('click', function() {
-                        window.location.href = 'connexion.html';
-                    });
-                </script>
-            </div>
-            
-            <div>
-                <button class="logout">Déconnexion</button>
-                <button id="deleteAccountButton">Supprimer le compte</button>
-            </div>
-        </main>
-    </body>
+        <div>
+            <!-- Boutons pour déconnexion et suppression de compte -->
+            <button class="logout">Déconnexion</button> <!-- Bouton de déconnexion -->
+            <button id="deleteAccountButton">Supprimer le compte</button> <!-- Bouton pour supprimer le compte -->
+        </div>
+    </main>
     <footer>
-        <p>Projet VELUQAC </p>
+        <!-- Pied de page fixe -->
+        <p>Projet VELUQAC </p> <!-- Mention du projet -->
     </footer>
+</body>
 </html>

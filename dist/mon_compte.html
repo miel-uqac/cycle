@@ -1,34 +1,40 @@
 <!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page du compte</title>
-        <script defer src="./bundle.js"></script>
-        <link rel="stylesheet" href="./css/mon_compte.css">
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="./accueil.html">Accueil</a>
-                <a href="./mon_energie.html">Mon Energie</a>
-                <a href="./ma_collection.html">Ma Collection</a>
-                <a href="./la_boutique.html">La Boutique</a>
-                <a href="./activites.html">Activités</a>      
-                <a href="./ajout_donnees.html">Ajout de données</a>
-            </nav>
-        </header>
-        <main>
-            <h1> Mon compte</h1>
-            <div id="profile-container" style="display:none;">
-                <h2>Bienvenue, <span id="user-name"></span>!</h2>
-                <p>Email: <span id="user-email"></span></p>
-                <button class="logout">Se déconnecter</button>
-            </div>
-        </main>
-    </body>
+<html lang="fr"> 
+<head>
+    <meta charset="UTF-8"> <!-- Déclaration du jeu de caractères UTF-8 pour le document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuration pour un affichage adapté aux appareils mobiles -->
+    <title>Page du compte</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <script defer src="./bundle.js"></script> <!-- Inclusion du fichier JavaScript principal avec exécution différée jusqu'au chargement complet du HTML -->
+    <link rel="stylesheet" href="./css/mon_compte.css"> <!-- Lien vers le fichier CSS spécifique à la page "Mon Compte" -->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"> <!-- Définition de l'icône de la page affichée dans l'onglet du navigateur -->
+</head>
+<body>
+    <header>
+        <!-- En-tête fixe contenant la navigation -->
+        <nav>
+            <!-- Liens de navigation vers différentes pages du site -->
+            <a href="./accueil.html">Accueil</a>
+            <a href="./mon_energie.html">Mon Energie</a>
+            <a href="./ma_collection.html">Ma Collection</a>
+            <a href="./la_boutique.html">La Boutique</a>
+            <a href="./activites.html">Activités</a>
+            <a href="./ajout_donnees.html">Ajout de données</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Zone principale du contenu de la page -->
+        <h1>Mon compte</h1> <!-- Titre principal de la page -->
+
+        <div id="profile-container" style="display:none;">
+            <!-- Conteneur pour les informations du profil, initialement caché avec style inline -->
+            <h2>Bienvenue, <span id="user-name"></span>!</h2> <!-- Message de bienvenue avec le nom de l'utilisateur inséré ici -->
+            <p>Email: <span id="user-email"></span></p> <!-- Affichage de l'email de l'utilisateur -->
+            <button class="logout">Se déconnecter</button> <!-- Bouton pour déconnexion -->
+        </div>
+    </main>
     <footer>
-        <p>Projet VELUQAC </p>
+        <!-- Pied de page fixe -->
+        <p>Projet VELUQAC </p> <!-- Mention du projet -->
     </footer>
+</body>
 </html>

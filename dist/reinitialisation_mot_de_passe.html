@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"> 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réinitialiser le mot de passe</title>
-    <script defer src="./bundle.js"></script>
-    <link rel="stylesheet" href="./css/reinitialisation_mot_de_passe.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8"> <!-- Déclaration du jeu de caractères UTF-8 pour le document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuration pour un affichage adapté aux appareils mobiles -->
+    <title>Réinitialiser le mot de passe</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <script defer src="./bundle.js"></script> <!-- Inclusion du fichier JavaScript principal avec exécution différée jusqu'au chargement complet du HTML -->
+    <link rel="stylesheet" href="./css/reinitialisation_mot_de_passe.css"> <!-- Lien vers le fichier CSS spécifique à la page de réinitialisation du mot de passe -->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"> <!-- Définition de l'icône de la page affichée dans l'onglet du navigateur -->
 </head>
 <body>
     <header>
+        <!-- En-tête fixe contenant la navigation -->
         <nav>
+            <!-- Liens de navigation vers différentes pages du site -->
             <a href="./accueil.html">Accueil</a>
             <a href="./mon_energie.html">Mon Energie</a>
             <a href="./ma_collection.html">Ma Collection</a>
             <a href="./la_boutique.html">La Boutique</a>
             <a href="./activites.html">Activités</a>
-
         </nav>
     </header>
     <main>
+        <!-- Zone principale du contenu de la page -->
         <div class="container" id="content">
             <!-- Le contenu sera ajouté ici par JavaScript -->
-
         </div>
-        <div id="error-message" style="color: red; display: none;"></div>
-
+        <div id="error-message" style="color: red; display: none;"></div> <!-- Zone pour afficher les messages d'erreur -->
+        
         <script>
             // Fonction pour obtenir les paramètres de l'URL
             function getQueryParams() {
@@ -72,7 +73,7 @@
                 }
             }
     
-            // Initialiser la page
+            // Initialiser la page en affichant le contenu approprié
             window.onload = displayContent;
 
             // Ajouter l'événement après avoir vérifié que l'élément existe
@@ -80,7 +81,7 @@
                 const retourButton = document.getElementById('retourPageAccueil');
                 if (retourButton) {
                     retourButton.addEventListener('click', function() {
-                        window.location.href = 'accueil.html';
+                        window.location.href = 'accueil.html'; // Rediriger vers la page d'accueil lorsque le bouton est cliqué
                     });
                 }
             });

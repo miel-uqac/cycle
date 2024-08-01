@@ -1,64 +1,73 @@
+/* Styles pour le corps de la page */
 body {
-    background-color: #6FB776;
-    font-family: Arial, sans-serif;
+    background-color: #6FB776; /* Couleur de fond */
+    font-family: Arial, sans-serif; /* Police de caractères */
 }
 
+/* Styles pour l'en-tête de la page */
 header {
-    width: 100%;
-    background-color: #15771F;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 1000; 
+    width: 100%; /* Largeur de 100% pour prendre toute la largeur */
+    background-color: #15771F; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 0; /* Espacement en haut et en bas */
+    position: fixed; /* Position fixe en haut */
+    top: 0; /* Placement en haut de la page */
+    left: 0; /* Placement à gauche */
+    z-index: 1000; /* Assure que l'en-tête reste au-dessus des autres éléments */
 }
 
+/* Styles pour les liens dans la navigation de l'en-tête */
 header nav a {
-    margin-left: 10px;
-    color: azure;
+    margin-left: 10px; /* Espacement à gauche de chaque lien */
+    color: azure; /* Couleur des liens */
 }
 
+/* Styles pour le contenu principal */
 main {
-    padding-top: 60px; 
-    padding-bottom: 40px; 
+    padding-top: 60px; /* Espacement supérieur pour éviter l'en-tête fixe */
+    padding-bottom: 40px; /* Espacement inférieur */
 }
 
+/* Styles pour les titres h1 */
 h1 {
-    margin: 10px;
-    text-align: center;
+    margin: 10px; /* Marge autour du titre */
+    text-align: center; /* Centrage du texte */
 }
 
+/* Styles pour le conteneur d'appareils */
 #appareilsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; 
-    background-color: #15771F;
-    padding: 10px; 
+    display: flex; /* Utilisation du Flexbox pour disposition flexible */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante */
+    gap: 10px; /* Espacement entre les éléments */
+    background-color: #15771F; /* Couleur de fond */
+    padding: 10px; /* Espacement intérieur */
 }
 
+/* Styles pour chaque appareil */
 .appareil {
-    flex: 1 1 200px; 
-    margin: 10px;
-    box-sizing: border-box;
-    border: 1px solid #000;
-    padding: 10px;
-    text-align: center;
+    flex: 1 1 200px; /* Flex-grow, flex-shrink et base de 200px */
+    margin: 10px; /* Marge autour de chaque appareil */
+    box-sizing: border-box; /* Inclut les bordures et le padding dans la largeur totale */
+    border: 1px solid #000; /* Bordure noire */
+    padding: 10px; /* Espacement intérieur */
+    text-align: center; /* Centrage du texte */
 }
 
-div{
-    background-color: #6FB776;
-    border: 1px solid black;
-    margin: 10px;
-    padding: 10px;
+/* Styles généraux pour les div */
+div {
+    background-color: #6FB776; /* Couleur de fond */
+    border: 1px solid black; /* Bordure noire */
+    margin: 10px; /* Marge autour du div */
+    padding: 10px; /* Espacement intérieur */
 }
 
+/* Styles pour le pied de page */
 footer {
-    width: 100%;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed; 
-    bottom: 0;
-    left: 0;
-    text-align: center;
+    width: 100%; /* Largeur de 100% pour prendre toute la largeur */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 0; /* Espacement en haut et en bas */
+    position: fixed; /* Position fixe en bas */
+    bottom: 0; /* Placement en bas de la page */
+    left: 0; /* Placement à gauche */
+    text-align: center; /* Centrage du texte */
 }
